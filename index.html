@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>AI Customer Support</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="chat-card" aria-label="Customer support chatbot">
+      <header class="chat-header">
+        <div class="brand-mark" aria-hidden="true">AI</div>
+        <div class="brand-copy">
+          <h1>Customer Support</h1>
+          <p><span class="online-dot"></span> Online · Usually replies instantly</p>
+        </div>
+        <span class="header-tag">ASSISTANT</span>
+      </header>
+
+      <div class="welcome-panel">
+        <p class="eyebrow">HOW CAN WE HELP?</p>
+        <h2>Hi there! 👋</h2>
+        <p>Ask us about products, orders, returns, or technical support.</p>
+      </div>
+
+      <div id="chat-box" class="chat-box" aria-live="polite" aria-label="Chat messages">
+        <div class="message-row bot-row">
+          <div class="avatar">AI</div>
+          <div class="message bot-message">Hello! Welcome to customer support. How can I help you today?</div>
+        </div>
+      </div>
+
+      <div class="suggestions" aria-label="Suggested questions">
+        <button class="suggestion" type="button" data-message="Tell me about your products">Products</button>
+        <button class="suggestion" type="button" data-message="I need technical support">Technical support</button>
+        <button class="suggestion" type="button" data-message="What is your return policy?">Returns</button>
+        <button class="suggestion" type="button" data-message="How can you help me?">More help</button>
+      </div>
+
+      <form id="chat-form" class="chat-form">
+        <label class="sr-only" for="user-input">Type your message</label>
+        <input id="user-input" name="message" type="text" maxlength="1000" placeholder="Type your question here..." autocomplete="off" required>
+        <button id="send-button" type="submit" aria-label="Send message">Send <span aria-hidden="true">➤</span></button>
+      </form>
+      <footer class="chat-footer">Powered by Python · Flask</footer>
+    </section>
+    <p class="page-note">Customer Support Assistant · Demo project</p>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
